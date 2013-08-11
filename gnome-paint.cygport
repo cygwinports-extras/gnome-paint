@@ -1,0 +1,13 @@
+inherit gnome2
+
+NAME="gnome-paint"
+VERSION=0.4.0
+RELEASE=1
+CATEGORY="Graphics"
+SUMMARY="GTK+ paint program"
+DESCRIPTION="gnome-paint is a simple, easy to use paint program for GNOME.
+It is inspired by MS-Paint."
+HOMEPAGE="https://launchpad.net/gnome-paint/"
+SRC_URI="http://launchpad.net/gnome-paint/trunk/${VERSION}/+download/${NAME}-${VERSION}.tar.gz"
+
+MAKEOPTS+=" gnome_paint_LDFLAGS=-export-dynamic"
