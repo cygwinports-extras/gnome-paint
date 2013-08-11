@@ -9,5 +9,11 @@ DESCRIPTION="gnome-paint is a simple, easy to use paint program for GNOME.
 It is inspired by MS-Paint."
 HOMEPAGE="https://launchpad.net/gnome-paint/"
 SRC_URI="http://launchpad.net/gnome-paint/trunk/${VERSION}/+download/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="
+	http://patch-tracker.debian.org/patch/series/dl/gnome-paint/0.4.0-4/lp-757607-crash-in-toolbar.patch
+	http://patch-tracker.debian.org/patch/series/dl/gnome-paint/0.4.0-4/debian-612470-handle-urls.patch
+	http://patch-tracker.debian.org/patch/series/dl/gnome-paint/0.4.0-4/ftbfs-format-security.patch
+"
 
-MAKEOPTS+=" gnome_paint_LDFLAGS=-export-dynamic"
+# CFLAGS: too old to disable deprecated APIs
+MAKEOPTS+=" gnome_paint_CFLAGS= gnome_paint_LDFLAGS=-export-dynamic"
